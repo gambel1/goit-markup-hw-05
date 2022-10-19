@@ -618,6 +618,7 @@ footer {
    transform: translateY(0);
 }
 .reclam-text {
+   content: "";
    position: absolute;
    font-size: 18px;
    line-height: 1.55;
@@ -625,7 +626,12 @@ footer {
    height: 168px;
 
    letter-spacing: 0.03em;
-   color: var(--White);
+   color: tomato;
+
+   transform: translateY(100%);
+}
+.reclam-text:hover {
+   transform: translateY(0);
 }
 .reclam-tools {
    padding: 20px 24px;
