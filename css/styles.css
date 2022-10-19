@@ -98,10 +98,10 @@ header {
    
    letter-spacing: 0.02em;
    color: var(--primery-text-color);
-   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   transition: color 250ms var(--timing-function);
 }
 .link-nav::after {
-   content: '';
+   content: "";
    position: absolute;
    display: block;
    top: 28px;
@@ -109,11 +109,15 @@ header {
    width: 100%;
    height: 4px;
    background-color: var(--acent-color);
-   opacity: 0;
-   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   transform: scaleY(0);
+   transition: transform 250ms var(--timing-function);
 }
 .link-nav:hover::after {
-   opacity: 1;
+   transform: scaleY(1);
+}
+.link-nav:hover::after {
+   
+   transform: scaleX(1);
 }
 .link-nav:hover,
 .link-nav:focus {
@@ -135,12 +139,11 @@ header {
    color: var(--title-text-color);
    fill: currentColor;
 
-   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   transition: color 250ms var(--timing-function);
 }
 .mail-link:hover,
 .mail-link:focus {
    color: var(--acent-color);
-   
 }
 
 /* hero */
@@ -180,19 +183,24 @@ header {
    margin-right: auto;
    margin-left: auto;
    padding: 10px 32px;
-
-   background: var(--acent-color);
-   color: var(--White);
+    
    font-weight: 700;
    font-size: 16px;
    line-height: 1.87;
+   font-family: inherit;
+
    letter-spacing: 0.06em;
    border-radius: 4px;
    border: none;
-   font-family: inherit
+   color: var(--White);
+   background-color: var(--acent-color);
+
+   transition: background-color 250ms var(--timing-function), 
+               box-shadow 250ms var(--timing-function);
 }
-.hero-button:hover {
-   background: var(--acent-color);
+.hero-button:hover,
+.hero-button:focus {
+   background-color: var(--acent-color);
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
    cursor: pointer;
 }
@@ -203,7 +211,7 @@ header {
    width: 100%;
    height: 100%;
    background-color: rgba(0, 0, 0, 0.2);;
-   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   transition: opacity 250ms var(--timing-function);
 }
 .backdrop.is-hidden {
    opacity: 0;
@@ -220,7 +228,9 @@ header {
    
    height: 581px;
    width: 528px;
-   background: #FFFFFF;
+   background-color: #FFFFFF;
+
+
 }
 .modal-button {
    position: absolute;
@@ -235,6 +245,7 @@ header {
    border: 1px solid rgba(0, 0, 0, 0.1);
    border-radius: 50%;
    background-color: #ffffff;
+   
 }
 .modal-icon {
    width: 11px;
@@ -397,17 +408,18 @@ header {
    height: 44px;
    fill: var(--fill-icon);
    border-radius: 50%;
+
+   transition: background-color 250ms var(--timing-function),
+               box-shadow 250ms var(--timing-function),
+               fill 250ms var(--timing-function);
 }
-.command-link:hover {
-   fill: var(--White);
-   background-color: var(--acent-color);
-   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
-}
+.command-link:hover,
 .command-link:focus {
    fill: var(--White);
    background-color: var(--acent-color);
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
 }
+
 .command-icon {
    width: 20px;
    height: 20px;
@@ -438,16 +450,15 @@ header {
    border: 1px solid var(--fill-icon);
    border-radius: 4px;
    fill:var(--fill-icon);
+
+   transition: fill 250ms var(--timing-function),
+               border-color 250ms var(--timing-function);
 }
-.client-link:hover {
-   fill: var(--acent-color);
-   border-color: var(--acent-color);
-}
+.client-link:hover,
 .client-link:focus {
    fill: var(--acent-color);
    border-color: var(--acent-color);
 }
-
 .client-icon {
    width: 106px;
    height: 60px;
@@ -490,6 +501,7 @@ footer {
    font-weight: 400;
    line-height: 1.7;
    text-decoration: none;
+   transition: color 250ms var(--timing-function);
 }
 .address-link:hover {
    color: var(--acent-color);
@@ -518,16 +530,15 @@ footer {
    width: 44px;
    height: 44px;
    border-radius: 50%;
+
    fill: #ffffff;
    background: rgba(255, 255, 255, 0.1);
+   transition: background-color 250ms var(--timing-function);
 }
-.footer-link:hover {
-   background-color: var(--acent-color);
-}
+.footer-link:hover,
 .footer-link:focus {
    background-color: var(--acent-color);
 }
-
 /* Портфолио */
 .button-list {
    display: flex;
@@ -548,15 +559,21 @@ footer {
    font-weight: 500;
    font-size: 16px;
    line-height: 1.62;
+
    letter-spacing: 0.03em;
    border-radius: 4px;
    border: none;
    background: #F5F4FA;
    color: var(--primery-text-color);
+
+   transition: color 250ms var(--timing-function),
+               background-color 250ms var(--timing-function),
+               box-shadow 250ms var(--timing-function),
+               filter 250ms var(--timing-function);               ;
 }
 .button-list-item:hover {
    color: var(--White);
-   background: var(--acent-color);
+   background-color: var(--acent-color);
    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
    cursor: pointer;
 }
@@ -573,9 +590,42 @@ footer {
 .reclam-link {
    display: block;
    text-decoration: none;
+
+   transition: box-shadow 250ms var(--timing-function);
 }
 .reclam-link:hover {
    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.reclam-backdrop {
+   position: relative;
+   overflow: hidden;
+}
+.reclam-backdrop::after {
+   content: "";
+   display: block;
+   position: absolute;
+   top: 0;
+   
+   width: 100%;
+   height: 100%;
+   background-color: var(--acent-color);
+
+   opacity: 0.9;
+   transform: translateY(100%);
+   transition: transform 250ms var(--timing-function);
+}
+.reclam-backdrop:hover::after {
+   transform: translateY(0);
+}
+.reclam-text {
+   position: absolute;
+   font-size: 18px;
+   line-height: 1.55;
+   width: 322px;
+   height: 168px;
+
+   letter-spacing: 0.03em;
+   color: var(--White);
 }
 .reclam-tools {
    padding: 20px 24px;
