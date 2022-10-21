@@ -100,7 +100,7 @@ header {
    color: var(--primery-text-color);
    transition: color 250ms var(--timing-function);
 }
-.link-nav::after {
+/* .link-nav::after {
    content: "";
    position: absolute;
    display: block;
@@ -113,14 +113,30 @@ header {
    
    opacity: 0;
    transition: opacity 250ms var(--timing-function);
-}
-.link-nav:hover::after {
+} */
+/* .link-nav:hover::after {
    opacity: 1;
-}
+} */
 .link-nav:hover,
-.link-nav:focus {
+.current, 
+.link-nav:focus { 
    color: var(--acent-color);
 }
+.current::after {
+   content: "";
+   position: absolute;
+   display: block;
+   margin-top: 28px;
+   
+   width: 100%;
+   height: 4px;
+   border-radius: 2px;
+   background-color: var(--acent-color);
+   
+   /* opacity: 1; */
+   transition: opacity 250ms var(--timing-function);
+}
+
 
 /* email */
 .mail {
